@@ -1,10 +1,9 @@
 import React from "react";
 
-export const {
-  Provider: UserProvider,
-  Consumer: UserConsumer
-} = React.createContext({
+export const UserContext = React.createContext({
   user: {},
   logOut: () => {},
   fetchData: () => {}
 });
+
+export const { Provider: UserProvider, Consumer: UserConsumer } = UserContext;
