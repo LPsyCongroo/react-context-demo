@@ -1,0 +1,8 @@
+.MyAccount {
+  display: flex;
+  align-items: center;
+}
+
+.MyAccount p {
+  margin-right: 16px;
+}
