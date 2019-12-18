@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 import Header from "./components/Header.js";
+import { UserProvider } from "./components/UserContext";
 
 const mockData = {
   user: {
@@ -15,7 +16,7 @@ const mockData = {
 
 function App() {
   const [state, setState] = React.useState({
-    data: {}
+    data: null
   });
   const fetchData = () =>
     setState({
@@ -23,9 +24,19 @@ function App() {
     });
   const logOut = () =>
     setState({
-      data: {}
+      data: null
     });
-  return <Header data={state.data} fetchData={fetchData} logOut={logOut} />;
+  return (
+    <UserProvider
+      value={{
+        user: state.data && state.data.user,
+        logOut,
+        fetchData
+      }}
+    >
+      <Header />
+    </UserProvider>
+  );
 }
 
 const rootElement = document.getElementById("root");
