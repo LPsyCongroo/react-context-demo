@@ -1,4 +1,12 @@
 .MainMenu {
   width: 360px;
+  height: 100%;
   padding: 8px;
+}
+
+.MainMenu footer {
+  padding: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

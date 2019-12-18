@@ -5,7 +5,7 @@ import MenuButton from "./MenuButton";
 import MainMenu from "./MainMenu";
 import Toolbar from "./ToolBar";
 
-const Header = ({ data, fetchData }) => {
+const Header = ({ data, fetchData, logOut }) => {
   const [state, setState] = React.useState({
     isOpen: false
   });
@@ -18,6 +18,7 @@ const Header = ({ data, fetchData }) => {
         isOpen={state.isOpen}
         toggleDrawer={toggleDrawer}
         userName={data.user && data.user.firstName}
+        logOut={logOut}
       />
     </nav>
   );

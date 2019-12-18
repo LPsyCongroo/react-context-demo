@@ -17,12 +17,15 @@ function App() {
   const [state, setState] = React.useState({
     data: {}
   });
-  const fetchData = () => {
+  const fetchData = () =>
     setState({
       data: mockData
     });
-  };
-  return <Header data={state.data} fetchData={fetchData} />;
+  const logOut = () =>
+    setState({
+      data: {}
+    });
+  return <Header data={state.data} fetchData={fetchData} logOut={logOut} />;
 }
 
 const rootElement = document.getElementById("root");
